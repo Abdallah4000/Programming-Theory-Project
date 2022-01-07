@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
-    [SerializeField]private float speed = 10f;
+    private float speed1 = 7f;
+    private float speed2 = 14f;
+    private float speed3 = 21f;
+
     private float speedPro = 20f;
 
-    // Update is called once per frame
     void Update()
     {
         Movement();
@@ -18,7 +20,7 @@ public class MoveForward : MonoBehaviour
         if(gameObject.CompareTag("Projectile"))
         {
             transform.Translate (Vector3.up * speedPro * Time.deltaTime);
-            if(transform.position.z > 15f)
+            if(transform.position.z > 20f)
             {
 
                 Destroy(gameObject);
@@ -28,11 +30,23 @@ public class MoveForward : MonoBehaviour
 
         if(gameObject.CompareTag("Enemy"))
         {
-            transform.Translate (Vector3.forward * speed * Time.deltaTime);
+            if(DataSaver.instance.level== 0)
+            {
+                transform.Translate (Vector3.forward * speed1 * Time.deltaTime);
+            }
+            else if (DataSaver.instance.level== 1)
+            {
+                transform.Translate (Vector3.forward * speed2 * Time.deltaTime);
+            }
+            else if (DataSaver.instance.level== 2)
+            {
+                transform.Translate (Vector3.forward * speed3 * Time.deltaTime);
+            }
+
+
             if(transform.position.z < -9f)
             {
-                // here we player lose
-                //Debug.Log("1");
+                DataSaver.instance.TScore -= 10;
                 Destroy(gameObject);
 
             }

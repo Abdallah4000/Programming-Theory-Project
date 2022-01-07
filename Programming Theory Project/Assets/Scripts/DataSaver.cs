@@ -8,9 +8,7 @@ public class DataSaver : MonoBehaviour
 {
     public static DataSaver instance;
 
-    public TextMeshProUGUI EasyScoreText;
-    public TextMeshProUGUI MediumScoreText;
-    public TextMeshProUGUI HardScoreText;
+    public int level;
 
 
     public int EasyScore;
@@ -18,10 +16,17 @@ public class DataSaver : MonoBehaviour
     public int MediumScore;
     
     public int HardScore;
+
+    
+    public int TScore = 0;
+    public int TScore2 = 0;
+
+
+    
+
+
     private void Awake() {
 
-        EasyScoreText.text = "1";
-        
         if(instance != null)
         {
             Destroy(gameObject);
@@ -30,7 +35,6 @@ public class DataSaver : MonoBehaviour
 
         instance = this ;
         DontDestroyOnLoad(gameObject);
-
         LoadScore();
     }
 

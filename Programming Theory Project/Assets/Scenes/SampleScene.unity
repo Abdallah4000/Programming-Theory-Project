@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 97393448}
   - component: {fileID: 97393447}
   - component: {fileID: 97393446}
+  - component: {fileID: 97393449}
   m_Layer: 5
   m_Name: Hard
   m_TagString: Untagged
@@ -293,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.3, y: -75.2}
+  m_AnchoredPosition: {x: -36.93098, y: -75.2}
   m_SizeDelta: {x: 140.8911, y: 42.7393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &97393446
@@ -341,8 +342,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1757503437}
-        m_TargetAssemblyTypeName: UI_Controller, Assembly-CSharp
-        m_MethodName: StartButton
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: HardButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -390,6 +391,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97393444}
   m_CullTransparentMesh: 1
+--- !u!114 &97393449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97393444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.31132078, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -3.45, y: -2.96}
+  m_UseGraphicAlpha: 1
 --- !u!1 &107073137
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,12 +524,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 894cfea5ea21cea4b9c6f136b611e177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EasyScoreText: {fileID: 983971269}
-  MediumScoreText: {fileID: 0}
-  HardScoreText: {fileID: 0}
+  level: 0
   EasyScore: 0
   MediumScore: 0
   HardScore: 0
+  TScore: 0
+  TScore2: 0
 --- !u!1 &237371092
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +542,7 @@ GameObject:
   - component: {fileID: 237371096}
   - component: {fileID: 237371095}
   - component: {fileID: 237371094}
+  - component: {fileID: 237371097}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -550,8 +567,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -203.3461, y: -70.01}
-  m_SizeDelta: {x: 107.4931, y: 42.48}
+  m_AnchoredPosition: {x: -205.42374, y: -70.01}
+  m_SizeDelta: {x: 112.5998, y: 42.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &237371094
 MonoBehaviour:
@@ -598,7 +615,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1757503437}
-        m_TargetAssemblyTypeName: UI_Controller, Assembly-CSharp
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
@@ -647,6 +664,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237371092}
   m_CullTransparentMesh: 1
+--- !u!114 &237371097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237371092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.31132078, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -3.45, y: -2.96}
+  m_UseGraphicAlpha: 1
 --- !u!1 &373396428
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +691,7 @@ GameObject:
   - component: {fileID: 373396432}
   - component: {fileID: 373396431}
   - component: {fileID: 373396430}
+  - component: {fileID: 373396433}
   m_Layer: 5
   m_Name: Medium
   m_TagString: Untagged
@@ -683,7 +716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.3, y: -27.4}
+  m_AnchoredPosition: {x: -36.93098, y: -27.4}
   m_SizeDelta: {x: 140.8911, y: 42.7393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373396430
@@ -731,8 +764,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1757503437}
-        m_TargetAssemblyTypeName: UI_Controller, Assembly-CSharp
-        m_MethodName: StartButton
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: MediumButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -780,6 +813,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373396428}
   m_CullTransparentMesh: 1
+--- !u!114 &373396433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373396428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.31132078, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -3.45, y: -2.96}
+  m_UseGraphicAlpha: 1
 --- !u!1 &391734826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74.631, y: -75.2}
+  m_AnchoredPosition: {x: 70.000015, y: -75.2}
   m_SizeDelta: {x: 72.97, y: 42.7393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834447662
@@ -1673,7 +1721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.3, y: 72}
+  m_AnchoredPosition: {x: -36.93098, y: 72}
   m_SizeDelta: {x: 140.8911, y: 42.7393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &935812395
@@ -2063,12 +2111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.3
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2086,7 +2134,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -2204,6 +2252,7 @@ GameObject:
   - component: {fileID: 1118070461}
   - component: {fileID: 1118070460}
   - component: {fileID: 1118070459}
+  - component: {fileID: 1118070462}
   m_Layer: 5
   m_Name: Easy
   m_TagString: Untagged
@@ -2228,7 +2277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.3, y: 21.1}
+  m_AnchoredPosition: {x: -36.93098, y: 21.1}
   m_SizeDelta: {x: 140.8911, y: 42.7393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118070459
@@ -2276,8 +2325,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1757503437}
-        m_TargetAssemblyTypeName: UI_Controller, Assembly-CSharp
-        m_MethodName: StartButton
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: EasyButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2325,6 +2374,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118070457}
   m_CullTransparentMesh: 1
+--- !u!114 &1118070462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118070457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.31132078, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: -3.45, y: -2.96}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1191570898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,7 +2465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74.631, y: 72}
+  m_AnchoredPosition: {x: 70, y: 72}
   m_SizeDelta: {x: 72.97, y: 42.7393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318509214
@@ -2686,7 +2750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74.631, y: -27.4}
+  m_AnchoredPosition: {x: 70.000015, y: -27.4}
   m_SizeDelta: {x: 72.97, y: 42.7393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493409809
@@ -3030,7 +3094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74.631, y: 21.1}
+  m_AnchoredPosition: {x: 70.000015, y: 21.1}
   m_SizeDelta: {x: 72.97, y: 42.7393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1739638799
@@ -3097,10 +3161,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1757503436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bef24e88662a0b74190d4175cf1975a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 318856d8ffc5def4a8cea7859f491fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pause: {fileID: 0}
+  EasyScoreText: {fileID: 983971269}
+  MediumScoreText: {fileID: 689702607}
+  HardScoreText: {fileID: 1797346835}
 --- !u!4 &1757503438
 Transform:
   m_ObjectHideFlags: 0

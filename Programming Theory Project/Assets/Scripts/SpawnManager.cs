@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject enemy;
+    public List<GameObject> enemy = new List<GameObject>();
+
     private float xSpawn =4.7f ;
     private float ySpawn = .25f;
-    private float zSpawn = 40f;
+    private float zSpawn = 98f;
     private float delay = 2f;
     private float spawnRate = .7f;
     private int difficulty = 1;
+    private int level;
     void Start()
     {
+        level = DataSaver.instance.level;
         Invoke("EnemySpawn",delay);
         
     }
-
 
     void EnemySpawn()
     {
@@ -26,10 +28,10 @@ public class SpawnManager : MonoBehaviour
         {
             spawnRate -= .05f;
         }
-
+        
         float xPos = Random.Range(-xSpawn , xSpawn);
         Vector3 randomPos = new Vector3(xPos,ySpawn,zSpawn);
-        Instantiate(enemy,randomPos,enemy.transform.rotation);
+        Instantiate(enemy[level],randomPos,enemy[level].transform.rotation);
         Invoke("EnemySpawn",spawnRate);
 
     }

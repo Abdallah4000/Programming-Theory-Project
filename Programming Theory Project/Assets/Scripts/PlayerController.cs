@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
         Projectile();
+        
+        if(DataSaver.instance.TScore < 0)
+        {
+            DataCheck2();
+            GameOver();
+        }
     }
 
     void Movement()
@@ -22,6 +28,8 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * Time.deltaTime * playerSpeed * horizontalInput);
     }
+
+
 
     void Projectile()
     {
@@ -45,18 +53,47 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
-            Destroy(gameObject);
-            Time.timeScale = 0;
-            GameOverScreen.SetActive(true);
-            PauseButton.SetActive(false);
+            GameOver();
         }
         else if(other.gameObject.CompareTag("Wall"))
         {
-            Destroy(gameObject);
-            Time.timeScale = 0;
-            GameOverScreen.SetActive(true);
-            PauseButton.SetActive(false);
+            GameOver ();
+        }
+    }
 
+    public void GameOver ()
+    {
+        DataCheck2();
+        Destroy(gameObject);
+        Time.timeScale = 0;
+        GameOverScreen.SetActive(true);
+        PauseButton.SetActive(false);
+    }
+    private void DataCheck2()
+    {
+        if(DataSaver.instance.level == 0 )
+        {
+            if(DataSaver.instance.TScore > DataSaver.instance.EasyScore)
+            {
+                DataSaver.instance.EasyScore = DataSaver.instance.TScore;
+                DataSaver.instance.SaveScore();
+            }
+        }
+        if(DataSaver.instance.level == 1 )
+        {
+            if(DataSaver.instance.TScore > DataSaver.instance.MediumScore)
+            {
+                DataSaver.instance.MediumScore = DataSaver.instance.TScore;
+                DataSaver.instance.SaveScore();
+            }
+        }
+        if(DataSaver.instance.level == 2 )
+        {
+            if(DataSaver.instance.TScore > DataSaver.instance.HardScore)
+            {
+                DataSaver.instance.HardScore = DataSaver.instance.TScore;
+                DataSaver.instance.SaveScore();
+            }
         }
     }
 
